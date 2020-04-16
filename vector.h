@@ -41,6 +41,9 @@ public:
     Vector operator+(const Vector& rhs)const;
     Vector operator-(const Vector& rhs)const;
 
+    Vector operator-()const;
+    Vector operator*(double val)const;
+
     bool IsValid()const; // returns true if the vector is valid, false if it is invalid (dimension == 0)
     size_t Dimensions()const; // returns the dimension space of the vector
 

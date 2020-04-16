@@ -138,6 +138,26 @@ Vector Vector::operator-(const Vector &rhs) const {
     return retVal;
 }
 
+Vector Vector::operator-() const {
+    Vector retVal(_size);
+    Vector temp(_size);
+    temp = *this;
+    for (size_t i = 0; i < _size; i++) {
+        retVal[i] = temp[i] * -1.0;
+    }
+    return retVal;
+}
+
+Vector Vector::operator*(double val) const {
+    Vector retVal(_size);
+    Vector temp(_size);
+    temp = *this;
+    for (size_t i = 0; i < _size; i++) {
+        retVal[i] = temp[i] * val;
+    }
+    return retVal;
+}
+
 bool Vector::IsValid() const {
     return _size != 0;
 }
@@ -167,6 +187,7 @@ istream &Vector::Read(istream &input) {
     if (dimension == 0){
         if (_data){
             delete[] _data;
+            _data = nullptr;
             _size = 0;
         }
         return input;

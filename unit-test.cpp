@@ -127,6 +127,51 @@ int main(int argc, char* argv[]) {
     DoubleEquals(g.EuclidianDistance(g), 0);
 //    assert(g.EuclidianDistance(h) == sqrt(25.81));
 //    assert(g.EuclidianDistance(g) == 0);
+    Vector j(2), k(0);
+    j[0] = 1.0;
+    j[1] = -2.5;
+    k = -j;
+    assert(DoubleEquals(k[0], -1.0));
+    assert(DoubleEquals(k[1], 2.5));
+
+    Vector l(1), m(0);
+    l[0] = -2.0;
+    m = -l;
+    assert(DoubleEquals(m[0], 2.0));
+
+    Vector n(4), o(0);
+    n[0] = -1.3;
+    n[1] = 1.7;
+    n[2] = -5.7;
+    n[3] = 4.5;
+    o = -n;
+    assert(DoubleEquals(o[0], 1.3));
+    assert(DoubleEquals(o[1], -1.7));
+    assert(DoubleEquals(o[2], 5.7));
+    assert(DoubleEquals(o[3], -4.5));
+
+    Vector p(2), q(0);
+    p[0] = 1.0;
+    p[1] = -2.5;
+    q = p * 2.0;
+    assert(DoubleEquals(q[0], 2.0));
+    assert(DoubleEquals(q[1], -5.0));
+
+    Vector r(1), s(0);
+    r[0] = -2.0;
+    s = r * -4.0;
+    assert(DoubleEquals(s[0], 8.0));
+
+    Vector t(4), u(0);
+    t[0] = -1.3;
+    t[1] = 1.7;
+    t[2] = -5.7;
+    t[3] = 4.5;
+    u = t * -3.0;
+    assert(DoubleEquals(u[0], 3.9));
+    assert(DoubleEquals(u[1], -5.1));
+    assert(DoubleEquals(u[2], 17.1));
+    assert(DoubleEquals(u[3], -13.5));
 
     cout << "All unit tests passed" << endl;
 
